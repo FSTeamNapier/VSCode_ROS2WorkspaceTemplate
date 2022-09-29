@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "${workspaceFolder}/install/${config:package_name}/include/**",
+                "${workspaceFolder}/src/${config:package_name}/include/**",
+                "${workspaceFolder}/src/${config:package_name}/sdk/include/**",
+                "${workspaceFolder}/src/${config:package_name}/sdk/src",
+                "${config:ros2_dir}/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
+}

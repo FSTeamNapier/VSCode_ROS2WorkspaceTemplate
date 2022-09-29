@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+
+    // The following configurations are custom-made by Lewis Kaye 2022 for development with ROS2 on Ubuntu.  
+    // Please configure your Settings.json file correctly.  
+    // Ensure you are opening your workspace folder, not your package folder, as a project (e.g. ros2_ws)
+
+    "version": "0.2.0",
+    "configurations": [
+
+        // Colcon Build and Run in DEBUG Mode
+        {
+            "name": "ROS2 Build & Debug",
+                "request": "launch",
+                "type": "cppdbg",
+                "miDebuggerServerAddress": "localhost:3000",
+                "cwd": "/",
+                "program": "${workspaceFolder}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}",
+                "preLaunchTask": "build_and_debug"
+        },
+        
+        // Colcon Build ONLY
+        {
+            "name": "ROS2 Colcon Build",
+                "request": "launch",
+                "type": "cppdbg",
+                "cwd": "/",
+                "program": "",
+                "preLaunchTask": "colcon_build"
+        },
+
+        // Run in Debug ONLY
+        {
+            "name": "ROS2 Debug",
+                "request": "launch",
+                "type": "cppdbg",
+                "miDebuggerServerAddress": "localhost:3000",
+                "cwd": "/",
+                "program": "${workspaceFolder}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}",
+                "preLaunchTask": "launch"
+        },
+
+        // Run in Debug and attach to an already-running node (ie. no preLaunchTask)
+        {
+            "name": "ROS2 Debug (Attach to running node)",
+                "request": "launch",
+                "type": "cppdbg",
+                "miDebuggerServerAddress": "localhost:3000",
+                "cwd": "/",
+                "program": "${workspaceFolder}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}"
+        },
+    ]
+}

@@ -7,12 +7,14 @@
     // Please configure your Settings.json file correctly.  
     // Ensure you are opening your workspace folder, not your package folder, as a project (e.g. ros2_ws)
 
+    // If you need to modify the command VSCode uses to run the program (node executable) - modify the field "program"
+
     "version": "0.2.0",
     "configurations": [
 
-        // Colcon Build and Run in DEBUG Mode
+        // Colcon Build and Run in DEBUG Mode (C++)
         {
-            "name": "ROS2 Build & Debug",
+            "name": "ROS2 Build & Debug (C++)",
                 "request": "launch",
                 "type": "cppdbg",
                 "miDebuggerServerAddress": "localhost:3000",
@@ -21,19 +23,29 @@
                 "preLaunchTask": "build_and_debug"
         },
         
-        // Colcon Build ONLY
+        // Colcon Build PACKAGE ONLY (C++)
         {
-            "name": "ROS2 Colcon Build",
+            "name": "ROS2 Colcon Build (C++)",
                 "request": "launch",
                 "type": "cppdbg",
                 "cwd": "/",
-                "program": "",
+                "program": "", //Leave this blank, since build only and not running the program (it will throw an error that can be ignored)
                 "preLaunchTask": "colcon_build"
         },
 
-        // Run in Debug ONLY
+        // Colcon Build ALL (C++)
         {
-            "name": "ROS2 Debug",
+            "name": "ROS2 Colcon Build (C++)",
+                "request": "launch",
+                "type": "cppdbg",
+                "cwd": "/",
+                "program": "", //Leave this blank, since build only and not running the program (it will throw an error that can be ignored)
+                "preLaunchTask": "colcon_build_all"
+        },
+
+        // Run in Debug ONLY (C++)
+        {
+            "name": "ROS2 Debug (C++)",
                 "request": "launch",
                 "type": "cppdbg",
                 "miDebuggerServerAddress": "localhost:3000",
@@ -42,7 +54,7 @@
                 "preLaunchTask": "launch"
         },
 
-        // Run in Debug and attach to an already-running node (ie. no preLaunchTask)
+        // Run in Debug and attach to an already-running node (ie. no preLaunchTask) (Any Language)
         {
             "name": "ROS2 Debug (Attach to running node)",
                 "request": "launch",

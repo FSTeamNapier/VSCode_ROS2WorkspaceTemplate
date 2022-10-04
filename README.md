@@ -8,3 +8,4 @@ clone this repo into your Workspace folder - e.g. ros2_ws
 
 ``git clone https://github.com/FSTeamNapier/VSCode_ROS2WorkspaceTemplate``
 
+Edit the `settings.json` file as required.  Please note that currently, only C++ packages are supported.  

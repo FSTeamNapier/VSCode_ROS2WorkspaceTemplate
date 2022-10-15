@@ -6,12 +6,16 @@
                 "limitSymbolsToIncludedHeaders": false
             },
             "includePath": [
-                "${workspaceFolder}/install/${config:package_name}/include/**",
-                "${workspaceFolder}/src/${config:package_name}/include/**",
-                "${workspaceFolder}/src/${config:package_name}/sdk/include/**",
-                "${workspaceFolder}/src/${config:package_name}/sdk/src",
+                "${config:workspace_dir}/install/${config:package_name}/include/**",
+                "${config:workspace_dir}/src/${config:package_name}/include/**",
+                "${workspaceFolder}/include/**",
+                "${config:workspace_dir}/src/${config:package_name}/sdk/include/**",
+                "${config:workspace_dir}/src/${config:package_name}/sdk/src",
+                "${workspaceFolder}/sdk/include/**",
+                "${workspaceFolder}/sdk/src",
+
                 "${config:ros2_dir}/include/**",
-                "/usr/include/**"
+                "/usr/include/**",
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",

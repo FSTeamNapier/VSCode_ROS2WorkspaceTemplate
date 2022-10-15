@@ -14,18 +14,28 @@
 
         // Colcon Build and Run in DEBUG Mode (C++)
         {
-            "name": "ROS2 Build & Debug (C++)",
+            "name": "ROS2 Build & Debug (C++ Debug)",
                 "request": "launch",
                 "type": "cppdbg",
                 "miDebuggerServerAddress": "localhost:3000",
                 "cwd": "/",
-                "program": "${workspaceFolder}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}",
+                "program": "${config:workspace_dir}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}",
                 "preLaunchTask": "build_and_debug"
         },
-        
-        // Colcon Build PACKAGE ONLY (C++)
+
+        // Colcon Build and Run in RELEASE Mode (C++)
         {
-            "name": "ROS2 Colcon Build (C++)",
+            "name": "ROS2 Build & Run (C++ Release)",
+                "request": "launch",
+                "type": "cppdbg",
+                "cwd": "/",
+                "program": "${config:workspace_dir}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}",
+                "preLaunchTask": "build_and_run"
+        },
+        
+        // Colcon Build PACKAGE DEBUG (C++)
+        {
+            "name": "ROS2 Colcon Build Package (C++ Debug)",
                 "request": "launch",
                 "type": "cppdbg",
                 "cwd": "/",
@@ -33,25 +43,55 @@
                 "preLaunchTask": "colcon_build"
         },
 
-        // Colcon Build ALL (C++)
+        // Colcon Build PACKAGE RELEASE (C++)
         {
-            "name": "ROS2 Colcon Build (C++)",
+            "name": "ROS2 Colcon Build Package (C++ Release)",
                 "request": "launch",
                 "type": "cppdbg",
                 "cwd": "/",
                 "program": "", //Leave this blank, since build only and not running the program (it will throw an error that can be ignored)
-                "preLaunchTask": "colcon_build_all"
+                "preLaunchTask": "colcon_build_release"
         },
 
-        // Run in Debug ONLY (C++)
+        // Colcon Build ALL for DEBUG (C++)
         {
-            "name": "ROS2 Debug (C++)",
+            "name": "ROS2 Colcon Build All (C++ Debug)",
+                "request": "launch",
+                "type": "cppdbg",
+                "cwd": "/",
+                "program": "", //Leave this blank, since build only and not running the program (it will throw an error that can be ignored)
+                "preLaunchTask": "colcon_build_all_debug"
+        },
+
+        // Colcon Build ALL for RELEASE (C++)
+        {
+            "name": "ROS2 Colcon Build All (C++ Release)",
+                "request": "launch",
+                "type": "cppdbg",
+                "cwd": "/",
+                "program": "", //Leave this blank, since build only and not running the program (it will throw an error that can be ignored)
+                "preLaunchTask": "colcon_build_all_release"
+        },
+
+        // Run in DEBUG (C++)
+        {
+            "name": "ROS2 Run (C++ Debug)",
                 "request": "launch",
                 "type": "cppdbg",
                 "miDebuggerServerAddress": "localhost:3000",
                 "cwd": "/",
-                "program": "${workspaceFolder}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}",
+                "program": "${config:workspace_dir}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}",
                 "preLaunchTask": "launch"
+        },
+
+        // Run in RELEASE (C++)
+        {
+            "name": "ROS2 Run (C++ Release)",
+                "request": "launch",
+                "type": "cppdbg",
+                "cwd": "/",
+                "program": "${config:workspace_dir}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}",
+                "preLaunchTask": "launch_release"
         },
 
         // Run in Debug and attach to an already-running node (ie. no preLaunchTask) (Any Language)
@@ -61,7 +101,7 @@
                 "type": "cppdbg",
                 "miDebuggerServerAddress": "localhost:3000",
                 "cwd": "/",
-                "program": "${workspaceFolder}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}"
+                "program": "${config:workspace_dir}/install/${config:package_name}/lib/${config:package_name}/${config:node_name}"
         },
     ]
 }

@@ -17,3 +17,5 @@ You should now see the following options under the Run and Debug Tab (Ctrl+Shift
 ![image](https://user-images.githubusercontent.com/4342703/195993399-a2a7c94c-fbd1-40ec-a8a7-0d11340c763a.png)
 
 Select whichever configutation you require, and press run to initiate it.  
+
+[![DOI](https://zenodo.org/badge/543256563.svg)](https://zenodo.org/badge/latestdoi/543256563)
